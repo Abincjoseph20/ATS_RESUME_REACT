@@ -241,7 +241,7 @@ JOB_KEYWORDS = {
         'machine learning', 'deep learning', 'tensorflow', 'pytorch', 'python', 'neural networks',
         'natural language processing', 'computer vision', 'reinforcement learning', 'scikit-learn',
         'data preprocessing', 'model deployment', 'ai algorithms', 'big data', 'cloud ai',
-        'mlops', 'feature engineering', 'model evaluation', 'hugging face', 'generative ai'
+        'mlops', 'feature engineering','model evaluation','hugging face','generative ai'
     ],
     'blockchain developer': [
         'blockchain', 'smart contracts', 'solidity', 'ethereum', 'hyperledger', 'web3',

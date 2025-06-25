@@ -4,6 +4,7 @@ from rest_framework.response import Response                  # To send custom r
 from .models import Resume                                    # Resume model
 from .serializers import ResumeSerializer                     # Serializer for Resume model
 from .utils import JOB_KEYWORDS                               # Dictionary containing job roles and their related keywords
+from rest_framework.decorators import action 
 
 import fitz    # PyMuPDF used for extracting text from PDF files
 import docx    # python-docx used for extracting text from DOCX files
@@ -87,6 +88,12 @@ class ResumeViewSet(viewsets.ModelViewSet):
                 'ats_score': score,
                 'matched_keywords': matched
             }, status=status.HTTP_201_CREATED)
-
-        # If serializer was not valid, return error response
+            # If serializer was not valid, return error response
+        
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    @action(detail=False,methods=['get'],url_path='shortlisted')
+    def shortlisted_resume(self,request):
+        shortlisted = Resume.objects.filter(ats_score__gt=50)
+        serializer = ResumeSerializer(shortlisted,many=True)
+        return Response(serializer.data)
