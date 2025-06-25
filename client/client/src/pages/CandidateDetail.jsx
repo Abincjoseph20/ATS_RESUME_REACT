@@ -38,17 +38,17 @@ function CandidateDetails() {
         </a>
 
         
-        <iframe
-            src={resume.file}
-            width="50%"
-            height="600px"
-            title="Resume Preview"
-            style={{ border: "1px solid #ccc", marginTop: "20px" }}
-        />
+            <iframe
+                src={resume.file}
+                width="50%"
+                height="600px"
+                title="Resume Preview"
+                style={{ border: "1px solid #ccc", marginTop: "20px" }}
+            />
         </>
       )}
-      
-    </div>
+      {/* 85906 15974, nandanams60.com2@gmail.com */}
+    </div> 
   );
 }
 
