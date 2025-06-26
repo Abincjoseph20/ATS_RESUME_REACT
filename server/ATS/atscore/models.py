@@ -45,3 +45,13 @@ class Resume(models.Model):
     
     def __str__(self):
         return f"{self.job_role} - {self.ats_score}%"
+    
+    
+    
+class InterviewAudio(models.Model):
+    candidate_name = models.CharField(max_length=100)
+    audio_file = models.FileField(upload_to='interview_audios/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.candidate_name} - {self.uploaded_at}"

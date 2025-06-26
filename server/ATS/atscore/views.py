@@ -1,11 +1,10 @@
 # Importing necessary modules and libraries
 from rest_framework import viewsets, status                    # viewsets to create RESTful API, status for response codes
 from rest_framework.response import Response                  # To send custom responses
-from .models import Resume                                    # Resume model
-from .serializers import ResumeSerializer                     # Serializer for Resume model
+from .models import Resume,InterviewAudio                                   # Resume model
+from .serializers import ResumeSerializer,InterviewAudioSerializer                   # Serializer for Resume model
 from .utils import JOB_KEYWORDS                               # Dictionary containing job roles and their related keywords
 from rest_framework.decorators import action 
-
 import fitz    # PyMuPDF used for extracting text from PDF files
 import docx    # python-docx used for extracting text from DOCX files
 import os      # OS module for interacting with file paths
@@ -13,6 +12,8 @@ import os      # OS module for interacting with file paths
 
 from rest_framework.views import APIView
 import uuid
+from rest_framework.parsers import MultiPartParser,FormParser
+
 
 
 # Define the ResumeViewSet class to handle API endpoints for Resume
@@ -115,6 +116,13 @@ class InterviewRoomView(APIView):
             "room_name":room_name,
             "jitsi_url": jitsi_url
         })
-
         
+class InterviewAudioUploadView(APIView):     
+        parser_classes = [MultiPartParser, FormParser]
         
+        def post(self,request,format=None):
+            serializer = InterviewAudioSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response({'message':'Audio uploaded successfully'},status=status.HTTP_201_CREATED)
+            return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
