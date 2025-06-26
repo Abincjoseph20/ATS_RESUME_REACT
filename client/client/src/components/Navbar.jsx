@@ -8,6 +8,7 @@ function Navbar(){
             <Link to='/ats' className='nav-link' >Ats</Link>
             <Link to='/contact' className='nav-link'>Contact</Link>
             <Link to='/Shortlisted' className='nav-link'>Shortlisted</Link>
+            <Link to='/InterviewRoom/'  className='nav-link'>video Call</Link>
         </nav>
     );
 }

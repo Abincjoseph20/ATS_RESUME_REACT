@@ -5,6 +5,7 @@ import Contact from "../pages/Contact";
 import AtsScore from "../pages/AtsScore";
 import Shortlisted from "../pages/Shortlisted";
 import CandidateDetails from "../pages/CandidateDetail";
+import InterviewRoom from "../pages/InterviewRoom"
 
 function AppRouter(){
     return(
@@ -16,6 +17,7 @@ function AppRouter(){
             <Route path="/contact" element={<Contact/>} />
             <Route path="/Shortlisted" element={<Shortlisted/>}/>   
             <Route path="/candidate/:id" element={<CandidateDetails/>}/>  
+            <Route path="/InterviewRoom" element={<InterviewRoom/>}/>
         </Routes>
     </Router>
     )

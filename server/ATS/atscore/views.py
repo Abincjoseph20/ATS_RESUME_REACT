@@ -10,6 +10,11 @@ import fitz    # PyMuPDF used for extracting text from PDF files
 import docx    # python-docx used for extracting text from DOCX files
 import os      # OS module for interacting with file paths
 
+
+from rest_framework.views import APIView
+import uuid
+
+
 # Define the ResumeViewSet class to handle API endpoints for Resume
 class ResumeViewSet(viewsets.ModelViewSet):
     
@@ -97,3 +102,19 @@ class ResumeViewSet(viewsets.ModelViewSet):
         shortlisted = Resume.objects.filter(ats_score__gt=50)
         serializer = ResumeSerializer(shortlisted,many=True)
         return Response(serializer.data)
+    
+    
+class InterviewRoomView(APIView):
+    def post(self,request,*args,**kwargs):
+        # Generate a unique room name
+        room_name = f"interview-{uuid.uuid4().hex[:8]}"
+        # Jitsi public server URL
+        jitsi_url = f"https://meet.jit.si/{room_name}"
+        
+        return Response({
+            "room_name":room_name,
+            "jitsi_url": jitsi_url
+        })
+
+        
+        
