@@ -7,9 +7,11 @@ function CandidateDetails() {
   const [resume, setResume] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(`http://127.0.0.1:8000/api/resumes/${id}/`)
-      .then((res) => setResume(res.data))
+    axios.get(`http://127.0.0.1:8000/api/resumes/${id}/`)
+      .then((res) => {
+        console.log('Resume File URL:', res.data.file);
+        setResume(res.data);
+      })
       .catch((err) => console.error("Error fetching candidate", err));
   }, [id]);
 
@@ -28,27 +30,42 @@ function CandidateDetails() {
       {/* Resume file download button */}
       {resume.file && resume.file.endsWith(".pdf") && (
         <>
-        <a
-          href={resume.file}
-          download
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button>Download Resume</button>
-        </a>
+          <a
+            href={resume.file}
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button>Download Resume</button>
+          </a>
+          
+          <a
+            href={resume.file}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ marginLeft: "10px" }}
+          >
+            <button>View in New Tab</button>
+          </a>
 
-        
-            <iframe
-                src={resume.file}
-                width="50%"
-                height="600px"
-                title="Resume Preview"
-                style={{ border: "1px solid #ccc", marginTop: "20px" }}
-            />
+          {/* Option 1: Using object tag */}
+          <object
+            data={resume.file}
+            type="application/pdf"
+            width="50%"
+            height="600px"
+            style={{ border: "1px solid #ccc", marginTop: "20px" }}
+          >
+            <p>
+              Your browser doesn't support PDFs. 
+              <a href={resume.file} target="_blank" rel="noopener noreferrer">
+                Click here to view the PDF
+              </a>
+            </p>
+          </object>
         </>
       )}
-      {/* 85906 15974, nandanams60.com2@gmail.com */}
-    </div> 
+    </div>
   );
 }
 

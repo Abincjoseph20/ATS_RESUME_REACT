@@ -46,8 +46,8 @@ const roles = [
     "dental hygienist", "merchandiser", "agricultural engineer", "childcare worker", "credit analyst",
     "respiratory therapist", "retail manager", "psychologist", "flight attendant",
     "procurement manager", "statistician", "patent attorney", "firefighter", "art director",
-    "marine biologist", "legal secretary", "broadcast journalist", "nuclear engineer","barista","Python Full Stack Developer",
-    "MERN Stack Developer","MEAN Stack Developer"
+    "marine biologist", "legal secretary", "broadcast journalist", "nuclear engineer","barista",
+    "Python Full Stack Developer","MERN Stack Developer","MEAN Stack Developer"
   ];
 
 const qualification = [

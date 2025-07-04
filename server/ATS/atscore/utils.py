@@ -840,30 +840,26 @@ JOB_KEYWORDS = {
         'food safety', 'teamwork', 'order accuracy', 'time management', 'beverage customization',
         'hospitality', 'point of sale'
     ],'python_full_stack_developer': [
-        'Python', 'Django', 'Flask', 'FastAPI', 'JavaScript', 'HTML', 'CSS', 
-        'React', 'Vue.js', 'Angular', 'REST API', 'GraphQL', 'SQL', 'NoSQL', 
-        'PostgreSQL', 'MySQL', 'MongoDB', 'ORM', 'Git', 'Docker', 'AWS', 
-        'Azure', 'GCP', 'CI/CD', 'unit testing', 'frontend development', 
-        'backend development', 'database management', 'API integration', 
+        'Python', 'Django', 'Flask', 'FastAPI', 'SQL', 'NoSQL', 'PostgreSQL', 'MySQL', 
+        'MongoDB', 'ORM', 'REST API', 'GraphQL', 'Git', 'Docker', 'AWS', 'Azure', 'GCP', 
+        'CI/CD', 'unit testing', 'backend development', 'API integration', 
         'authentication', 'authorization', 'Agile methodology', 'version control', 
-        'responsive design', 'web frameworks', 'server management', 'DevOps'],
+        'server management', 'DevOps'
+    ],
     'mern_stack_developer': [
-        'MongoDB', 'Express.js', 'React', 'Node.js', 'JavaScript', 'TypeScript', 
-        'HTML', 'CSS', 'REST API', 'GraphQL', 'Redux', 'React Hooks', 'NPM', 
-        'Webpack', 'Git', 'Docker', 'AWS', 'Azure', 'GCP', 'CI/CD', 
-        'frontend development', 'backend development', 'database management', 
-        'API integration', 'authentication', 'JWT', 'OAuth', 'responsive design', 
-        'state management', 'Agile methodology', 'version control', 'single-page applications', 
+        'MongoDB', 'Express.js', 'React', 'Node.js', 'JavaScript', 'TypeScript', 'REST API', 
+        'GraphQL', 'Redux', 'React Hooks', 'NPM', 'Webpack', 'Git', 'Docker', 'AWS', 
+        'CI/CD', 'frontend development', 'backend development', 'API integration', 
+        'authentication', 'JWT', 'OAuth', 'single-page applications', 
         'server-side rendering', 'web performance optimization'
-    ],'mean_stack_developer': [
-        'MongoDB', 'Express.js', 'Angular', 'Node.js', 'JavaScript', 'TypeScript', 
-        'HTML', 'CSS', 'REST API', 'GraphQL', 'Angular CLI', 'RxJS', 'NPM', 
-        'Webpack', 'Git', 'Docker', 'AWS', 'Azure', 'GCP', 'CI/CD', 
-        'frontend development', 'backend development', 'database management', 
-        'API integration', 'authentication', 'JWT', 'OAuth', 'responsive design', 
-        'two-way data binding', 'Agile methodology', 'version control', 
-        'single-page applications', 'server-side rendering', 'web performance optimization'
-]
+    ],
+    'mean_stack_developer': [
+        'MongoDB', 'Express.js', 'Angular', 'Node.js', 'JavaScript', 'TypeScript', 'REST API', 
+        'GraphQL', 'Angular CLI', 'RxJS', 'NPM', 'Webpack', 'Git', 'Docker', 'AWS', 
+        'CI/CD', 'frontend development', 'backend development', 'API integration', 
+        'authentication', 'JWT', 'OAuth', 'two-way data binding', 'single-page applications', 
+        'web performance optimization'
+    ]
 
 }
     
